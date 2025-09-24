@@ -1,18 +1,26 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import Container from 'react-bootstrap/Container';
-import InvoiceForm from './components/InvoiceForm';
+import React, { useState } from "react";
+import InvoiceForm from "./components/InvoiceForm";
+import "./App.css";
 
-class App extends Component {
-  render() {
+function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
-    <div className="App d-flex flex-column align-items-center justify-content-center w-100">
-      <Container>
-        <InvoiceForm/>
-      </Container>
+    <div className={darkMode ? "App dark" : "App"}>
+      <div className="container py-3">
+        <div className="d-flex justify-content-between align-items-center mb-3">
+          <h2 className="fw-bold">Invoice Generator</h2>
+          <button
+            className="btn btn-outline-secondary"
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+          </button>
+        </div>
+        <InvoiceForm />
+      </div>
     </div>
   );
-}}
+}
 
 export default App;

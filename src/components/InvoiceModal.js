@@ -35,18 +35,30 @@ class InvoiceModal extends React.Component {
       <div>
         <Modal show={this.props.showModal} onHide={this.props.closeModal} size="lg" centered>
           <div id="invoiceCapture">
-            <div className="d-flex flex-row justify-content-between align-items-start bg-light w-100 p-4">
-              <div className="w-100">
-                <h4 className="fw-bold my-2">{this.props.info.billFrom||'John Uberbacher'}</h4>
-                <h6 className="fw-bold text-secondary mb-1">
-                  Invoice #: {this.props.info.invoiceNumber||''}
-                </h6>
-              </div>
-              <div className="text-end ms-4">
-                <h6 className="fw-bold mt-1 mb-2">Amount&nbsp;Due:</h6>
-                <h5 className="fw-bold text-secondary"> {this.props.currency} {this.props.total}</h5>
-              </div>
-            </div>
+           <div className="d-flex flex-row justify-content-between align-items-start bg-light w-100 p-4">
+  <div className="w-100">
+    {/* ✅ Company Logo */}
+    {this.props.info.logo && (
+      <div className="mb-2">
+        <img 
+          src={this.props.info.logo} 
+          alt="Company Logo" 
+          style={{ maxWidth: "120px", maxHeight: "80px" }}
+        />
+      </div>
+    )}
+
+    <h4 className="fw-bold my-2">{this.props.info.billFrom||'John Uberbacher'}</h4>
+    <h6 className="fw-bold text-secondary mb-1">
+      Invoice #: {this.props.info.invoiceNumber||''}
+    </h6>
+  </div>
+  <div className="text-end ms-4">
+    <h6 className="fw-bold mt-1 mb-2">Amount&nbsp;Due:</h6>
+    <h5 className="fw-bold text-secondary"> {this.props.currency} {this.props.total}</h5>
+  </div>
+</div>
+
             <div className="p-4">
               <Row className="mb-4">
                 <Col md={4}>
@@ -90,6 +102,21 @@ class InvoiceModal extends React.Component {
                       </tr>
                     );
                   })}
+                  {this.props.info.paymentDetails &&
+  <div className="bg-light p-3 rounded mt-3">
+    <h6 className="fw-bold">Bank / Payment Details</h6>
+    <p className="mb-0">Bank Name: {this.props.info.paymentDetails.bankName}</p>
+    <p className="mb-0">Account Number: {this.props.info.paymentDetails.accountNumber}</p>
+    <p className="mb-0">Account Name: {this.props.info.paymentDetails.accountName}</p>
+    <p className="mb-0">
+      IFSC: {this.props.info.paymentDetails.ifscCode}, 
+      SWIFT: {this.props.info.paymentDetails.swiftCode}, 
+      Routing: {this.props.info.paymentDetails.routingCode}
+    </p>
+    <p className="mb-0">Payable In: {this.props.info.paymentDetails.country} ({this.props.info.paymentDetails.currency})</p>
+  </div>
+}
+
                 </tbody>
               </Table>
               <Table>
