@@ -55,13 +55,27 @@ this.setState({ notes: aiResponse });
 ```
 **Payment Details Input**
 
-```<Form.Control
-  type="text"
-  placeholder="Enter payment info"
-  name="paymentDetails"
-  value={this.state.paymentDetails}
-  onChange={this.editField}
-/>```
+```
+
+ {this.props.info.paymentDetails && (
+  <div className="border rounded p-3 mt-3">
+    <h6 className="fw-bold mb-2">Bank / Payment Details</h6>
+    <Row>
+      <Col md={6}>
+        <p className="mb-1"><strong>Bank Name:</strong> {this.props.info.paymentDetails.bankName}</p>
+        <p className="mb-1"><strong>Account Number:</strong> {this.props.info.paymentDetails.accountNumber}</p>
+        <p className="mb-1"><strong>Account Name:</strong> {this.props.info.paymentDetails.accountName}</p>
+      </Col>
+      <Col md={6}>
+        <p className="mb-1"><strong>IFSC:</strong> {this.props.info.paymentDetails.ifscCode}</p>
+        <p className="mb-1"><strong>SWIFT:</strong> {this.props.info.paymentDetails.swiftCode}</p>
+        <p className="mb-1"><strong>Routing:</strong> {this.props.info.paymentDetails.routingCode}</p>
+        <p className="mb-1"><strong>Payable In:</strong> {this.props.info.paymentDetails.country} ({this.props.info.paymentDetails.currency})</p>
+      </Col>
+    </Row>
+  </div>
+)}
+```
 
 
 ***AI Feature Evaluation***
