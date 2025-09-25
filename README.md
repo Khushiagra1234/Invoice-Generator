@@ -35,7 +35,10 @@ I have enhanced the original project by implementing AI-powered and UX features:
 
 ```javascript
 this.setState({ darkMode: !this.state.darkMode });
-AI Notes Generation
+```
+
+**AI Notes Generation**
+```
 const aiResponse = `Thank you ${billTo} for your purchase of ${items.length} items totaling ${currency}${total}. Please make payment by ${dateOfIssue || 'the due date'}.`;
 this.setState({ notes: aiResponse });      
 ```
@@ -77,8 +80,9 @@ this.setState({ notes: aiResponse });
 )}
 ```
 
+---
 
-***AI Feature Evaluation***
+## AI Feature Evaluation
 
 **1. Dark Mode Toggle**
 
@@ -153,7 +157,9 @@ Add a preview for overflow handling in the invoice PDF, ensuring the layout stay
 
 ***How to Run***
 
-```git clone https://github.com/Khushiagra1234/Invoice-Generator.git
+```
+<img width="1158" height="888" alt="Screenshot 2025-09-25 124227" src="https://github.com/user-attachments/assets/d85bda20-bc5a-4da5-a240-2d2669979f54" />
+git clone https://github.com/Khushiagra1234/Invoice-Generator.git
 cd Invoice-Generator
 npm install
 npm start
@@ -171,3 +177,17 @@ AI Notes and Logo Upload integrate seamlessly into the invoice.
 Dark Mode ensures improved UI experience for users.
 
 ***Screenshots***
+
+**Editing**
+<img width="1158" height="888" alt="Screenshot 2025-09-25 124227" src="https://github.com/user-attachments/assets/f69ff2ad-ae98-4af1-8560-eb99b9b0a00c" />
+<img width="1191" height="909" alt="Screenshot 2025-09-25 124203" src="https://github.com/user-attachments/assets/d0a1e1eb-4b71-4474-b6d7-bfee2ec96e28" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d5074ea5-2a27-4ae4-b8a9-471942353635" />
+
+**Original**
+<img width="1035" height="774" alt="Screenshot 2025-09-25 124522" src="https://github.com/user-attachments/assets/f109134e-4a3c-4a05-94eb-9cd59e1a1919" />
+<img width="1037" height="776" alt="Screenshot 2025-09-25 124544" src="https://github.com/user-attachments/assets/d498d9e5-ab62-431e-bcd5-8ac1c71a6a90" />
+
+
+
+
+
