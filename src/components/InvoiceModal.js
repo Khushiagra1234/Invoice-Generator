@@ -102,20 +102,7 @@ class InvoiceModal extends React.Component {
                       </tr>
                     );
                   })}
-                  {this.props.info.paymentDetails &&
-  <div className="bg-light p-3 rounded mt-3">
-    <h6 className="fw-bold">Bank / Payment Details</h6>
-    <p className="mb-0">Bank Name: {this.props.info.paymentDetails.bankName}</p>
-    <p className="mb-0">Account Number: {this.props.info.paymentDetails.accountNumber}</p>
-    <p className="mb-0">Account Name: {this.props.info.paymentDetails.accountName}</p>
-    <p className="mb-0">
-      IFSC: {this.props.info.paymentDetails.ifscCode}, 
-      SWIFT: {this.props.info.paymentDetails.swiftCode}, 
-      Routing: {this.props.info.paymentDetails.routingCode}
-    </p>
-    <p className="mb-0">Payable In: {this.props.info.paymentDetails.country} ({this.props.info.paymentDetails.currency})</p>
-  </div>
-}
+                 
 
                 </tbody>
               </Table>
@@ -156,6 +143,24 @@ class InvoiceModal extends React.Component {
                 <div className="bg-light py-3 px-4 rounded">
                   {this.props.info.notes}
                 </div>}
+                {this.props.info.paymentDetails && (
+  <div className="border rounded p-3 mt-3">
+    <h6 className="fw-bold mb-2">Bank / Payment Details</h6>
+    <Row>
+      <Col md={6}>
+        <p className="mb-1"><strong>Bank Name:</strong> {this.props.info.paymentDetails.bankName}</p>
+        <p className="mb-1"><strong>Account Number:</strong> {this.props.info.paymentDetails.accountNumber}</p>
+        <p className="mb-1"><strong>Account Name:</strong> {this.props.info.paymentDetails.accountName}</p>
+      </Col>
+      <Col md={6}>
+        <p className="mb-1"><strong>IFSC:</strong> {this.props.info.paymentDetails.ifscCode}</p>
+        <p className="mb-1"><strong>SWIFT:</strong> {this.props.info.paymentDetails.swiftCode}</p>
+        <p className="mb-1"><strong>Routing:</strong> {this.props.info.paymentDetails.routingCode}</p>
+        <p className="mb-1"><strong>Payable In:</strong> {this.props.info.paymentDetails.country} ({this.props.info.paymentDetails.currency})</p>
+      </Col>
+    </Row>
+  </div>
+)}
             </div>
           </div>
           <div className="pb-4 px-4">
